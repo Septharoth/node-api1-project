@@ -2,7 +2,7 @@ const express = require("express")
 const server = express()
 
 const db = require("./database")
-
+const port = process.env.PORT || 3000
 server.use(express.json())
 
 // getAllUsers
@@ -78,6 +78,6 @@ server.delete('/users/:id', (req, res) => {
 })
 
 //connect
-server.listen(5000, () => {
+server.listen(port, () => {
     console.log(`Server started on port 5000`) // I used ` quotes to remind myself I can set the port to a variable in a config file somewhere and just do `${port}` for this log lol
 })
